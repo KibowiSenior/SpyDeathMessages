@@ -1,0 +1,111 @@
+# ============================================================
+#             SpyDeathMessages - Config
+# ============================================================
+#  Colour codes: use & codes (&a, &c, &l etc.) or hex (#ff1313)
+#  Placeholders:
+#    %victim%    - name of the player who died
+#    %attacker%  - name of the player who killed them
+#    %weapon%    - item the killer was holding
+#    %world%     - world the death happened in
+#
+#  Each message section has 4 channels. Set enabled: true/false
+#  on any channel to turn it on or off independently.
+#  Multiple entries in 'message' = one is chosen at random.
+# ============================================================
+
+settings:
+  prefix: "#a8a8a8[#00a4fcDeathMsg#a8a8a8] "
+  cancel_vanilla_message: true
+  broadcast_mode: global
+  broadcast_radius: 100
+  title_fade_in: 10
+  title_stay: 60
+  title_fade_out: 10
+
+# ============================================================
+#  MESSAGES
+# ============================================================
+messages:
+
+  # ── Killed by another player ─────────────────────────────
+  killed:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "#a8a8a8» #ff1313☠ #ff1313%victim% #a8a8a8was slain by #ff1313🗡 #00a4fc%attacker% #a8a8a8using #ffcc00%weapon%"
+          - "#a8a8a8» #ff1313☠ #ff1313%victim% #a8a8a8was killed by #00a4fc%attacker%"
+      actionbar:
+        enabled: true
+        message:
+          - "#ff1313☠ %victim% was killed by %attacker%"
+      title:
+        enabled: false
+        message:
+          - "#ff1313☠ YOU DIED"
+      subtitle:
+        enabled: false
+        message:
+          - "#a8a8a8Killed by #00a4fc%attacker%"
+
+  # ── Any other death ───────────────────────────────────────
+  died:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "#a8a8a8» #ff1313☠ #ff1313%victim% #a8a8a8has died"
+      actionbar:
+        enabled: false
+        message:
+          - "#ff1313☠ %victim% has died"
+      title:
+        enabled: false
+        message:
+          - "#ff1313☠ YOU DIED"
+      subtitle:
+        enabled: false
+        message:
+          - ""
+
+# ============================================================
+#  SYSTEM MESSAGES
+# ============================================================
+system_messages:
+
+  no_permission:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "%prefix%#ff1313You do not have permission to do that."
+
+  reload_success:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "%prefix%#00ff7fConfig reloaded successfully."
+
+  toggle_enabled:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "%prefix%#a8a8a8You will now #00a4fcsee #a8a8a8death messages."
+
+  toggle_disabled:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "%prefix%#a8a8a8You will no longer #ff1313see #a8a8a8death messages."
+
+  help:
+    module:
+      chat:
+        enabled: true
+        message:
+          - "#ff1313=== #00a4fcSpyDeathMessages #ff1313==="
+          - "#a8a8a8/dm toggle #7f7f7f- Toggle death messages for yourself"
+          - "#a8a8a8/dm reload #7f7f7f- Reload the config #7f7f7f(admin)"

@@ -1,0 +1,22 @@
+name: SpyDeathMessages
+version: 1.0.0
+description: Advanced customizable death messages plugin with hex colour support
+author: spy
+main: com.spy.spydeathmessages.SpyDeathMessages
+api-version: 1.21
+
+commands:
+  deathmessages:
+    description: Main command for SpyDeathMessages
+    usage: /deathmessages <toggle|reload|help>
+    aliases: [dm]
+
+permissions:
+  spydm.admin:
+    description: Access to all SpyDeathMessages admin commands
+    default: op
+    children:
+      spydm.reload: true
+  spydm.reload:
+    description: Allows reloading the config
+    default: op
